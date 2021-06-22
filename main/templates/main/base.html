@@ -1,0 +1,122 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>{% translate 'Вікінг' %} | {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/main/style/style.css' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static '/main/img/favicon.ico' %}">
+
+    <script type="text/javascript" src="{% static 'main/script/jQuery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/script/script.js' %}"></script>
+    <script type="text/javascript">
+
+    $(function () {
+        $('.popup').hide(0, function (){
+            $('#pop').html('<img src="{% static 'main/img/free-icon-phone-call-1112490.png' %}">').click(function () {
+                $('.popup').show(300, function () {
+                    $('#pop').html('');
+                    $('#x').click(function (){
+                        $('.popup').hide(300, function (){
+                            $('#pop').html('<img src="{% static 'main/img/free-icon-phone-call-1112490.png' %}">');
+                        });
+                    });
+                });
+            });
+        });
+
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+            $('.center').css({paddingLeft: 0, paddingRight: 0, width: 100 + '%'});
+            $('.cont').css({width: 90 + '%'});
+        }
+        else {
+            $('.center').css({paddingLeft: 20 + '%', paddingRight: 20 + '%', width: 60 + '%'})
+            $('.cont').css({width: 60 + 'vw'})
+        }
+    })
+
+    </script>
+
+    {% block head %}{% endblock %}
+</head>
+<body>
+
+<!-- ----------------Header------------------- -->
+<header>
+    <div id="foot">
+        <nav>
+            <a href="{% url 'home' %}">{% translate 'Головна' %}</a>
+            <a href="{% url 'services' %}">{% translate 'Послуги' %}</a>
+            <a href="{% url 'about' %}">{% translate 'Про нас' %}</a>
+            <a href="{% url 'create' %}">{% translate 'Питання' %}</a>
+            <a id="order" href="{% url 'order' %}">{% translate 'Замовити послугу' %}</a>
+        </nav>
+    </div>
+
+</header>
+<!-- ----------------------------------------- -->
+
+
+<!-- -------------Select languages------------ -->
+<div id="lang">
+    {% get_current_language as LANGUAGE_CODE %}
+    {% get_available_languages as LANGUAGES %}
+    {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+                <a href="/{{ language.code }}/" {% if language.code == LANGUAGE_CODE %} class="selected"{% endif %}>
+                    {% if language.code == 'uk' %}<img id="ua" src="{% static 'main/img/ua.jpg' %}" width="20px" alt="lang">
+                    {% elif language.code == 'ru' %}<img id="ru" src="{% static 'main/img/ru.png' %}" width="20px" alt="lang">
+                    {% endif %}
+                </a>
+        {% endfor %}
+</div>
+
+<!-- ----------------------------------------- -->
+
+
+<!-- -------------Content on pages------------ -->
+<div class="center">
+    {% block content %}{% endblock %}
+</div>
+<div style="background-color: white; width: 100%">
+    <div class="cont">
+        {% block contentFullWidth %}{% endblock %}
+    </div>
+</div>
+<!-- ----------------------------------------- -->
+
+
+<!-- --------------- Pop up ------------------ -->
+<div class="popup">
+    <a href="tel:+380979900136">
+        <div style="top: -1000px; display: inline-block">
+            <img style="border-radius: 50%;" src="{% static 'main/img/photo_2021-04-16_10-53-18.jpg' %}" width="40px" height="40px" alt="handyman">
+        </div>
+
+        <h3 class="popupH">Юляна</h3>
+        <h5 class="popupH">{% translate 'Задати питання/Замовити послугу' %}</h5>
+        <h3 class="popupH">(097)990-01-36</h3>
+    </a>
+    <img id="x" src="{% static 'main/img/free-icon-cross-mark-17047.png' %}" height="20px" width="20px" alt="x">
+</div>
+<div id="pop"></div>
+<!-- ----------------------------------------- -->
+
+
+<!-- ---------------- Footer ----------------- -->
+<footer>
+    <div>
+        <h3>{% translate 'БК Вікінг' %}</h3>
+        <p><a href="tel:+380979900136">(097)-990-01-36</a>
+        <a href="https://t.me/Good_Admin_Ua" style="text-decoration: none; padding-left: 15px"><img src="{% static 'main/img/telegram.png' %}" alt="telegram" width="15px"> @Good_Admin_Ua</a>
+        <a href="https://t.me/joinchat/xZG454sVelk3MDli" style="text-decoration: none; padding-left: 15px"><img src="{% static 'main/img/rab-removebg-preview.png' %}" alt="rabitnik" width="15px">Telegramm: Рабочие Грузчики Мастера Киев</a></p>
+    </div>
+
+    <div style="display: table-cell">&#169; Автор иконок: <a href="https://www.flaticon.com/ru/authors/catkuro" title="catkuro">catkuro</a> from <a href="https://www.flaticon.com/ru/" title="Flaticon">www.flaticon.com</a></div>
+</footer>
+<!-- ----------------------------------------- -->
+
+</body>
+</html>

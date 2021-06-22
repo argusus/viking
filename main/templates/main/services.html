@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% translate 'Послуги' %}
+{% endblock %}
+
+
+{% block content %}
+    <p>{% translate 'Замовити за телефоном:' %} <a href="tel:+380979900136" style="color: white; ">(097)-990-01-36</a></p>
+{% endblock %}
+
+{% block contentFullWidth %}
+
+<h1 align="center">{% translate 'ПЕРЕЛІК ПОСЛУГ' %}</h1>
+<div class="serviceTabl">
+{% for i in service %}
+    <a href="{% url 'service_detail' i.id %}" class="serviceAndPriseHref"><div class="serviceAndPrise">
+        <div class="service">{{ i.service }}</div>
+        <div class="price">{{ i.price }}
+            {% if i.si != none %}
+                <div style="display: inline">{{ i.si }}</div>
+            {% else %}
+                <div style="display: inline"></div>
+            {% endif %}
+        </div>
+    </div></a>
+{% endfor %}
+</div>
+
+{% endblock %}

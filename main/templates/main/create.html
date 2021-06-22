@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+    {% translate 'Задати питання' %}
+{% endblock %}
+
+
+{% block content %}
+    <h1>{% translate 'Задати питання' %}</h1>
+{% endblock %}
+
+{% block contentFullWidth %}
+
+<p align="center">{% blocktranslate %}Вкажіть номер телефону, Вам зателефонують найближчим часом з відповіддю на поставлене запитання{% endblocktranslate %}</p>
+<p align="center">{% blocktranslate %}Ім'я - щоб ми знали як до Вас звертатись{% endblocktranslate %}</p>
+<p align="center">{% blocktranslate %}Запитання - щоб ми знали що вам відповідати :){% endblocktranslate %}</p>
+<form method="post" class="CreateTaskForm">
+    {% csrf_token %}
+    {{ form.tel }}<br>
+    {{ form.name }}<br>
+    {{ form.text_questions }}
+    <span>{{ error }}</span>
+    <button type="submit">{% translate 'Надіслати' %}</button>
+</form>
+<br>
+<p>{% translate 'Або пишіть нам:' %}</p>
+<a href="https://t.me/Good_Admin_Ua"><img src="{% static 'main/img/telegram.png' %}" alt="telegram" width="40px"></a>
+<a href=""><img src="{% static 'main/img/free-icon-viber-2111705.png' %}" alt="viber" width="40px"></a>
+<a href=""><img src="{% static 'main/img/free-icon-messenger-2111402.png' %}" alt="messenger" width="40px"></a>
+<a href=""><img src="{% static 'main/img/free-icon-facebook-2111398.png' %}" alt="facebook" width="40px"></a>
+<a href=""><img src="{% static 'main/img/free-icon-instagram-2111463.png' %}" alt="instagram" width="40px"></a>
+
+{% endblock %}
