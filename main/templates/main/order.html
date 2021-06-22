@@ -18,11 +18,6 @@
         {% csrf_token %}
         {{ form.tel_service }}<br>
         {{ form.name_service }}<br>
-        <!-- <select name="" id="" class="CreateTaskName">
-            {% for i in service %}
-                <option value="">{{ i.service }}</option>
-            {% endfor %}
-        </select> -->
         {{ form.choice_service }}<br>
         {{ form.text_service }}<br>
         <span>{{ error }}</span>
@@ -35,9 +30,11 @@
     <p>{% blocktranslate %}Або, також, пишіть нам:{% endblocktranslate %}</p>
     <a href="https://t.me/Good_Admin_Ua"><img src="{% static 'main/img/telegram.png' %}" alt="telegram" width="40px"></a>
     <a href=""><img src="{% static '/main/img/free-icon-viber-2111705.png' %}" alt="viber" width="40px"></a>
+<!--
     <a href=""><img src="{% static '/main/img/free-icon-messenger-2111402.png' %}" alt="messenger" width="40px"></a>
     <a href=""><img src="{% static '/main/img/free-icon-facebook-2111398.png' %}" alt="facebook" width="40px"></a>
     <a href=""><img src="{% static '/main/img/free-icon-instagram-2111463.png' %}" alt="instagram" width="40px"></a>
+    -->
 </div>
 
 {% endblock %}

@@ -254,7 +254,15 @@ header a:hover{
 	border: solid 1px;
 	padding: 4px;
 	width: 50%;
+	outline: none;
 }
+
+.CreateTask:focus{
+	box-shadow: 0 0 7px 2px rgb(252, 180, 71);
+	border: 1px solid;
+}
+
+
 
 .CreateTaskForm input, textarea {
 	margin: 2px 2px 5px 0; /*Верх, Право, Низ, Ліво*/
@@ -264,11 +272,18 @@ header a:hover{
 	border-radius: 8px;
 	width: 100%;
 	padding: 4px;
+	outline: none;
+}
+
+.CreateTaskText:focus{
+	box-shadow: 0 0 7px 2px rgb(252, 180, 71);
+	border: 1px solid;
 }
 
 .select{
 	width: 51%;
-	margin-bottom: 3px;
+	margin-bottom: 4px;
+	margin-top: 2px;
 }
 
 .button{
