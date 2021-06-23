@@ -1,1 +1,2 @@
 # viking
+Сайт на Django
