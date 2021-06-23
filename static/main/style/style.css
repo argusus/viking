@@ -226,15 +226,13 @@ header a:hover{
 }
 
 
-
 /*////////////////////////////////*/
 
 
 .imgDetail{
 	float: right;
 	width: 400px;
-	margin: 10px;
-
+	margin: 18px 10px 10px;
 }
 
 .priceDetail{
