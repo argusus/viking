@@ -31,6 +31,7 @@ class Questions(models.Model):
         verbose_name = _('Питання')
         verbose_name_plural = _('Питання')
 
+
 class OrderServices(models.Model):
 
     tel_service = models.CharField(_('Номер телефону'), max_length=13)

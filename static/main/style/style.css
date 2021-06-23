@@ -55,7 +55,7 @@ header a{
 	margin: 10px 2px;
 	float: left;
 	max-height: 100px;
-	transition: background-color 1s;
+	transition: background-color 0.5s;
 	border-radius: 10px;
 }
 header a:hover{
@@ -193,7 +193,7 @@ header a:hover{
 	border-radius: 5px;
 	padding: 5px 15px;
 	font-size: 20px;
-
+	transition: box-shadow 0.3s;
 }
 
 .serviceAndPriseHref{
@@ -255,10 +255,11 @@ header a:hover{
 	padding: 4px;
 	width: 50%;
 	outline: none;
+	transition: box-shadow 0.3s;
 }
 
 .CreateTask:focus{
-	box-shadow: 0 0 7px 2px rgb(252, 180, 71);
+	box-shadow: 0 0 7px 1px rgb(252, 180, 71);
 	border: 1px solid;
 }
 
@@ -273,10 +274,11 @@ header a:hover{
 	width: 100%;
 	padding: 4px;
 	outline: none;
+	transition: box-shadow 0.3s;
 }
 
 .CreateTaskText:focus{
-	box-shadow: 0 0 7px 2px rgb(252, 180, 71);
+	box-shadow: 0 0 7px 1px rgb(252, 180, 71);
 	border: 1px solid;
 }
 
@@ -287,9 +289,17 @@ header a:hover{
 }
 
 .button{
-	padding: 5px 10px;
+	padding: 10px 20px;
 	border-radius: 5px;
 	margin-top: 5px;
+	background-color: #eed17e;
+	border: none;
+	transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.button:hover{
+	background-color: #efb439;
+	box-shadow: 0 0 7px 1px rgb(252, 180, 71);
 }
 /*////////////////////////////////*/
 
