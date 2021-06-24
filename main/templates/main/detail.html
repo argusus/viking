@@ -18,6 +18,6 @@
     {% else %}<h2>Ціна даної послуги:</h2>
     {% endif %}
 </div>
+    <a style="text-decoration: none" href="{% url 'order' %}"><div class="priceDetail button" style="color: #262626">{% translate 'Замовити' %}</div></a>
     <div class="priceDetail">{{ detail.price }} {{ detail.si }}</div>
-
 {% endblock %}

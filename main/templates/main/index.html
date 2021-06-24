@@ -45,7 +45,7 @@
             <h3 align="center" style="margin-top: 50px">{% translate 'Оберіть послугу' %}:</h3>
            <ul class="rab">
                 {% for i in service %}
-                    <li><a href="{% url 'order' %}"><p style="text-align: center; width: 100%">{{ i.service }}</p></a></li>
+                    <li><a href="{% url 'service_detail' i.id %}"><p style="text-align: center; width: 100%">{{ i.service }}</p></a></li>
                 {% endfor %}
             </ul>
             <h1 style="color: #bda874">{% blocktranslate with min_price=min_price.price max_price=max_price.price %}Ціна від {{ min_price }} до {{ max_price }} грн{% endblocktranslate %}</h1>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-23 10:46+0300\n"
+"POT-Creation-Date: 2021-06-24 18:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,22 +24,22 @@ msgstr ""
 msgid "Структура і форми сайту"
 msgstr "Структура и формы сайта"
 
-#: .\main\forms.py:14 .\main\forms.py:44 .\main\models.py:22
-#: .\main\models.py:36
+#: .\main\forms.py:15 .\main\forms.py:52 .\main\models.py:22
+#: .\main\models.py:37
 msgid "Номер телефону"
 msgstr "Номер телефона"
 
-#: .\main\forms.py:20 .\main\forms.py:51 .\main\models.py:23
-#: .\main\models.py:37
+#: .\main\forms.py:23 .\main\forms.py:61 .\main\models.py:23
+#: .\main\models.py:38
 msgid "Ім'я"
 msgstr "Имя"
 
-#: .\main\forms.py:24 .\main\models.py:31 .\main\models.py:32
+#: .\main\forms.py:29 .\main\models.py:31 .\main\models.py:32
 #: .\main\templates\main\base.html:53
 msgid "Питання"
 msgstr "Вопрос"
 
-#: .\main\forms.py:62
+#: .\main\forms.py:73
 msgid "Примітки до замовлення"
 msgstr "Примечания к заказу"
 
@@ -72,19 +72,19 @@ msgstr "Услуги"
 msgid "Текст питання"
 msgstr "Текст вопроса"
 
-#: .\main\models.py:25 .\main\models.py:40
+#: .\main\models.py:25 .\main\models.py:41
 msgid "Час створення"
 msgstr "Время создания"
 
-#: .\main\models.py:38
+#: .\main\models.py:39
 msgid "Замовлення послуги"
 msgstr "Заказ услуги"
 
-#: .\main\models.py:39
+#: .\main\models.py:40
 msgid "Побажання"
 msgstr "Пожелания"
 
-#: .\main\models.py:46 .\main\models.py:47
+#: .\main\models.py:47 .\main\models.py:48
 msgid "Замовлення"
 msgstr "Заказ"
 
@@ -183,6 +183,10 @@ msgstr "Отправить"
 #: .\main\templates\main\create.html:28
 msgid "Або пишіть нам:"
 msgstr "Или пишите нам:"
+
+#: .\main\templates\main\detail.html:21
+msgid "Замовити"
+msgstr "Заказать"
 
 #: .\main\templates\main\index.html:6
 msgid "Будівельна компанія"
@@ -351,7 +355,7 @@ msgstr ""
 msgid "Замовити послугу можна на сайті, за телефоном або в телеграмі"
 msgstr "Заказать услугу можна на сайте, по номеру или в телеграме"
 
-#: .\main\templates\main\order.html:30
+#: .\main\templates\main\order.html:29
 msgid "Або, також, пишіть нам:"
 msgstr "Или, также, пишите нам:"
 

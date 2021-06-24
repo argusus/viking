@@ -238,7 +238,10 @@ header a:hover{
 .priceDetail{
 	background-color: #ac8f3c;
 	padding: 10px 30px;
-	position: absolute;
+	//position: absolute;
+	display: inline-block;
+	width: 140px;
+	text-align: center;
 	border-radius: 5px;
 	color: #ffffff;
 	font-size: 14pt;
