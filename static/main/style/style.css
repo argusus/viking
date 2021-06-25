@@ -77,13 +77,38 @@ header{
 	border-radius: 10px;
 }
 
-.str{
-	//border-radius: 15px;
-	width: 100%;
-	background-color: #ffffff;
-	color: #262626;
-}
+/*----------------------------------------*/
 
+.MobileFoot{
+	display: none;
+	text-align: left;
+	padding: 0;
+}
+.MobileFoot a{
+	display: inline-block;
+	text-decoration: none;
+	color: white;
+	border: solid beige;
+	border-radius: 10px;
+	background-color: #333333;
+	width: 85%;
+	padding: 10px 20px;
+	margin: 5px 10px;
+}
+.burger{
+	display: block;
+	border-radius: 5px;
+	margin: 5px;
+	padding: 15px 10px 0 10px;
+	background-color: #333333;
+}
+.close{
+	display: block;
+	border-radius: 5px;
+	margin: 5px;
+	padding: 10px;
+	background-color: #333333;
+}
 
 /*/////////////////////////////////*/
 
@@ -422,7 +447,7 @@ footer div{
 		padding: 0 5px;
 	}
 	.MobileFoot{
-		display: inline-block;
+		display: inline;
 	}
 	.foot{
 		display: none;
