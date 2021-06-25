@@ -5,6 +5,7 @@
 <html lang="ua">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title>{% translate 'Вікінг' %} | {% block title %}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{% static '/main/style/style.css' %}">
     <link rel="shortcut icon" type="image/x-icon" href="{% static '/main/img/favicon.ico' %}">
@@ -26,7 +27,7 @@
                 });
             });
         });
-
+/*
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
             $('.center').css({paddingLeft: 0, paddingRight: 0, width: 100 + '%'});
             $('.cont').css({width: 90 + '%'});
@@ -34,7 +35,7 @@
         else {
             $('.center').css({paddingLeft: 20 + '%', paddingRight: 20 + '%', width: 60 + '%'})
             $('.cont').css({width: 60 + 'vw'})
-        }
+        }*/
     })
 
     </script>
