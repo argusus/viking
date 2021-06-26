@@ -29,16 +29,12 @@
         });
 
         $('.MobileFoot nav, .close').hide(0, function () {
-            console.log('click hide 1');
             $('.burger').click(function () {
-                console.log('click show 2');
                 $('.MobileFoot nav, .close').show(300, function (){
                     $('.burger').hide(300);
-                    console.log('click show 3');
                     $('.close').click(function () {
-                        console.log('click hide 4');
                         $('.burger').show(300);
-                        $('.MobileFoot nav, .close').hide(300)
+                        $('.MobileFoot nav, .close').hide(300);
                     });
                 });
             });
@@ -100,7 +96,7 @@
 <div class="center">
     {% block content %}{% endblock %}
 </div>
-<div style="background-color: white; width: 100%">
+<div style="background-color: white; width: 100%; min-width: 284px">
     <div class="cont">
         {% block contentFullWidth %}{% endblock %}
     </div>
@@ -111,7 +107,7 @@
 <!-- --------------- Pop up ------------------ -->
 <div class="popup">
     <a href="tel:+380979900136">
-        <div style="top: -1000px; display: inline-block">
+        <div style="top: -1000px; //display: inline-block">
             <img style="border-radius: 50%;" src="{% static 'main/img/photo_2021-04-16_10-53-18.jpg' %}" width="40px" height="40px" alt="handyman">
         </div>
 

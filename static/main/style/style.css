@@ -96,20 +96,24 @@ header{
 	margin: 5px 10px;
 }
 .burger{
-	display: block;
+	display: inline-block;
 	border-radius: 5px;
 	margin: 5px;
 	padding: 15px 10px 0 10px;
 	background-color: #333333;
+	width: 54px;
 }
 .close{
-	display: block;
+	display: inline-block;
 	border-radius: 5px;
 	margin: 5px;
 	padding: 10px;
 	background-color: #333333;
+	width: 54px;
 }
+.burger .close{
 
+}
 /*/////////////////////////////////*/
 
 #lang{
@@ -126,6 +130,7 @@ header{
 .center{
 	text-align: center;
 	max-width: 1200px;
+	min-width: 284px;
 	margin: 0 auto;
 	word-wrap: break-word;
 }
@@ -174,6 +179,10 @@ header{
 	background: #5a5a5a;
 	border-radius: 10px;
 
+}
+
+.InTitleImg{
+	display: inline;
 }
 /*/////////////////////////////////*/
 
@@ -238,10 +247,10 @@ header{
 
 .cont{
 	min-height: 100vh;
+	width: 1200px;
 	background-color: white;
 	color: #262626;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
 	padding: 10px 5px;
 	text-align: justify;
 
@@ -253,15 +262,18 @@ header{
 
 .imgDetail{
 	float: right;
-	width: 400px;
 	margin: 20px 10px 10px;
+}
+
+.imgDetail img{
+	width: 400px;
 }
 
 .priceDetail{
 	background-color: #ac8f3c;
 	padding: 10px 30px;
 	//position: absolute;
-	display: inline-block;
+	//display: inline-block;
 	width: 140px;
 	text-align: center;
 	border-radius: 5px;
@@ -269,6 +281,14 @@ header{
 	font-size: 14pt;
 }
 
+.ContentDetail{
+	max-width: 1195px;
+	margin: 0 auto;
+	padding: 10px 5px;
+	background-color: white;
+	color: #262626;
+	text-align: justify;
+}
 /*/////////////Form////////////////*/
 
 
@@ -423,10 +443,16 @@ footer div{
 	.center{
 		max-width: 970px;
 	}
+	.ContentDetail{
+		max-width: 970px;
+	}
 }
 
 @media (max-width: 992px) {
 	.center{
+		max-width: 750px;
+	}
+	.ContentDetail{
 		max-width: 750px;
 	}
 	.InTitle{
@@ -439,6 +465,9 @@ footer div{
 	.center{
 		max-width: none;
 	}
+	.ContentDetail{
+		max-width: none;
+	}
 	.IndexImg{
 		display: none;
 	}
@@ -446,16 +475,26 @@ footer div{
 		width: auto;
 		padding: 0 5px;
 	}
+	.InTitleImg{
+		display: none;
+	}
 	.MobileFoot{
 		display: inline;
 	}
 	.foot{
 		display: none;
 	}
+	header{
+		text-align: left;
+	}
+
 }
 
 @media (max-width: 460px) {
 	.InTitle li{
 		width: 95%;
+	}
+	footer div{
+		padding: 5px;
 	}
 }
