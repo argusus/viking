@@ -30,8 +30,6 @@ header{
 .foot{
 	position: fixed;
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
 	width: 100%;
 }
 .foot nav{
@@ -94,7 +92,7 @@ header{
 	border: solid rgba(245, 238, 220, 0.25) 1px;
 	border-radius: 10px;
 	background-color: #333333;
-	width: 77%;
+	width: -webkit-fill-available;
 	padding: 10px 20px;
 	margin: 5px 10px;
 }
@@ -103,8 +101,9 @@ header{
 }
 .burger, .close{
 	display: inline-block;
-	width: 54px;
-	padding: 10px;
+	width: auto;
+	height: auto;
+	padding: 5px;
 }
 /*/////////////////////////////////*/
 
@@ -138,9 +137,9 @@ header{
 
 .rab{
 	text-align: center;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
-	width: 100%;
+	width: 80%;
 }
 
 .InTitle li{
@@ -190,29 +189,28 @@ header{
 	text-align: center;
 	margin-bottom: 55px;
 }
+
 .advert li{
-	background-color: #b9ac8d;
-	width: 20%;
-	height: 55px;
 	list-style-type: none;
-	display: inline-grid;
+	display: inline-block;
 	text-align: center;
-	border-radius: 10px;
-	margin: 2px;
-	line-height: 1em;
-	border: #6e6243 solid 1px;
-	vertical-align: center;
+	width: 252px;
+	height: 96px;
+	line-height: 2px;
+	margin-bottom: 5px;
 }
-.advert h3{
-	color: #E6E6FA;
+.advert h2{
+	background-color: #b9ac8d;
+	width: auto;
+	//height: auto;
+	padding: 25px 10px;
+	border-radius: 10px;
+	border: none;
+	margin-bottom: 15px;
 }
 /*////////////////////////////////*/
 
 .serviceTabl{
-	//display: block;
-	//width: 60%;
-	//margin-right: auto;
-	//margin-left: auto;
 }
 
 .serviceAndPrise{
@@ -499,8 +497,16 @@ footer div{
 	.footerContainer{
 		max-width: 750px;
 	}
-	.ulCont{
-		width: ;
+	.foot{
+		display: none;
+		width: auto;
+	}
+	.MobileFoot{
+		display: inline;
+	}
+	header{
+		text-align: left;
+		height: auto;
 	}
 	.InTitle{
 		margin-top: 0;
@@ -537,7 +543,7 @@ footer div{
 	.MobileFoot{
 		display: inline;
 	}
-	.center h1{
+	.hh1{
 		margin-top: 0;
 	}
 	header{
