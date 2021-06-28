@@ -136,37 +136,39 @@ header{
 }
 
 .rab{
+	display: flex;
 	text-align: center;
 	margin: 0 auto;
 	padding: 0;
 	width: 80%;
+	flex-wrap: wrap;
+    justify-content: center;
 }
 
 .InTitle li{
 	background-color: #333333;
 	width: 30%;
-	height: 50px;
 	list-style-type: none;
-	display: inline-block;
 	text-align: center;
 	border-radius: 10px;
 	margin: 4px;
 	line-height: 1em;
+	transition: 500ms;
 }
 
 .InTitle a{
 	text-decoration: none;
-	display: inline-table;
 	color: #f2f2f2;
 	border-radius: 10px;
 	width: 100%;
 	height: 100%;
-	transition: background-color 500ms;
-	/*padding-top: 16px;*/
+	display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
-.InTitle a:hover{
+.InTitle li:hover{
 	color: #E6E6FA;
 	background: #5a5a5a;
 	border-radius: 10px;
@@ -195,7 +197,7 @@ header{
 	display: inline-block;
 	text-align: center;
 	width: 252px;
-	height: 96px;
+	height: 252px;
 	line-height: 2px;
 	margin-bottom: 5px;
 }
@@ -391,8 +393,8 @@ header{
 #pop{
 	position: fixed;
 	display: block;
-	bottom: 40px;
-	right: 40px;
+	bottom: 15px;
+	right: 15px;
 	text-align: center;
 	//font-size: 15px;
 	//color: #262626;
@@ -561,6 +563,7 @@ footer div{
 	footer div{
 		padding: 5px;
 	}
+
 }
 
 @media (max-width: 460px) {
@@ -570,5 +573,8 @@ footer div{
 	.ulCont{
 		width: auto;
 		//padding: 5px;
+	}
+	.advert li{
+		width: 120px;
 	}
 }
