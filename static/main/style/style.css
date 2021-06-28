@@ -189,26 +189,43 @@ header{
 	width: 100%;
 	display: block;
 	text-align: center;
-	margin-bottom: 55px;
+	//margin-bottom: 55px;
 }
-
+.advert ul{
+	display: flex;
+	flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: flex-start;
+	padding-left: 0;
+}
 .advert li{
+	width: 25%;
 	list-style-type: none;
-	display: inline-block;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
 	text-align: center;
-	width: 252px;
-	height: 252px;
-	line-height: 2px;
-	margin-bottom: 5px;
+	//width: 252px;
+	//height: 252px;
+	//line-height: 2px;
+	margin: 5px;
 }
 .advert h2{
 	background-color: #b9ac8d;
-	width: auto;
-	//height: auto;
-	padding: 25px 10px;
-	border-radius: 10px;
+	display: flex;
+	align-content: center;
+    justify-content: center;
+    align-items: center;
+	width: 80px;
+	height: 80px;
+	//padding: 10px;
+	border-radius: 100%;
 	border: none;
 	margin-bottom: 15px;
+	font-size: 16pt;
 }
 /*////////////////////////////////*/
 
@@ -563,7 +580,14 @@ footer div{
 	footer div{
 		padding: 5px;
 	}
-
+	.advert h2{
+		font-size: 12pt;
+		width: 60px;
+		height: 60px;
+	}
+	.advert div{
+		font-size: 12px;
+	}
 }
 
 @media (max-width: 460px) {
@@ -576,5 +600,13 @@ footer div{
 	}
 	.advert li{
 		width: 120px;
+	}
+	.advert h2{
+		font-size: 10pt;
+		width: 45px;
+		height: 45px;
+	}
+	.advert div{
+		font-size: 12px;
 	}
 }
