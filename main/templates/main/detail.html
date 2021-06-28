@@ -11,13 +11,18 @@
     <h1>{{ detail.service }}</h1>
 {% endblock %}
 {% block contentFullWidth %}
-<div style="display: inline-block;">
-    {% if detail.description %}
-        {% if detail.image %}<div class="imgDetail"><img src="{{ detail.image.url }}" alt="image" width="400px"></div>{% endif %}
-        <p>{{ detail.description }}</p>
-    {% else %}<h2>Ціна даної послуги:</h2>
-    {% endif %}
-</div>
+<div class="ContentDetail">
+    <div style="display: inline-block">
+        {% if detail.description %}
+            {% if detail.image %}<div class="imgDetail"><img src="{{ detail.image.url }}" alt="image"></div>{% endif %}
+
+            <p>{{ detail.description }}</p>
+
+        {% else %}<h2>Ціна даної послуги:</h2>
+        {% endif %}
+    </div>
+
     <a style="text-decoration: none" href="{% url 'order' %}"><div class="priceDetail button" style="color: #262626">{% translate 'Замовити' %}</div></a>
     <div class="priceDetail">{{ detail.price }} {{ detail.si }}</div>
+</div>
 {% endblock %}

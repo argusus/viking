@@ -30,7 +30,8 @@ ALLOWED_HOSTS = [
     '192.168.1.232',
     '127.0.0.1',
     '192.168.42.106',
-    '217.27.145.42',
+    '192.168.50.143',
+    '192.168.187.125',
     'argus.pythonanywhere.com'
 ]
 
@@ -131,7 +132,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
+PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
 
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [

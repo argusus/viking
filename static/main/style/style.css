@@ -27,14 +27,12 @@ header{
 	left: 0;
 	text-align: center;
 }
-#foot{
+.foot{
 	position: fixed;
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
 	width: 100%;
 }
-header nav{
+.foot nav{
 	display: inline-block;
 	margin-top: 0;
 	overflow: hidden;
@@ -44,7 +42,7 @@ header nav{
 	width: 80%;
 	padding: 0 2px;
 }
-header a{
+.foot a{
 
 	display: inline-block;
 	color: #f2f2f2;
@@ -58,7 +56,7 @@ header a{
 	transition: background-color 0.5s;
 	border-radius: 10px;
 }
-header a:hover{
+.foot a:hover{
 	color: #E6E6FA;
 	background: #5a5a5a;
 	border-radius: 10px;
@@ -77,14 +75,36 @@ header a:hover{
 	border-radius: 10px;
 }
 
-.str{
-	//border-radius: 15px;
-	width: 100%;
-	background-color: #ffffff;
-	color: #262626;
+/*----------------------------------------*/
+
+.MobileFoot{
+	display: none;
+	text-align: left;
+	padding: 0;
 }
-
-
+.MobileFoot nav{
+	padding-bottom: 10px;
+}
+.MobileFoot a{
+	display: inline-block;
+	text-decoration: none;
+	color: white;
+	border: solid rgba(245, 238, 220, 0.25) 1px;
+	border-radius: 10px;
+	background-color: #333333;
+	width: -webkit-fill-available;
+	padding: 10px 20px;
+	margin: 5px 10px;
+}
+.MobileFoot a:focus{
+	border-radius: 10px;
+}
+.burger, .close{
+	display: inline-block;
+	width: auto;
+	height: auto;
+	padding: 5px;
+}
 /*/////////////////////////////////*/
 
 #lang{
@@ -99,14 +119,13 @@ header a:hover{
 }
 
 .center{
-	display: inline-block;
 	text-align: center;
-	//width: 60%;
-	//padding-right: 20%;
-	//padding-left: 20%;
+	max-width: 1200px;
+	min-width: 284px;
+	margin: 0 auto;
 	word-wrap: break-word;
-	//min-height: 100vh;
 }
+
 
 /*////////////Button///////////////*/
 .InTitle{
@@ -117,41 +136,51 @@ header a:hover{
 }
 
 .rab{
+	display: flex;
 	text-align: center;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
-	width: 100%;
+	width: 80%;
+	flex-wrap: wrap;
+    justify-content: center;
 }
 
 .InTitle li{
 	background-color: #333333;
 	width: 30%;
-	height: 50px;
 	list-style-type: none;
-	display: inline-block;
 	text-align: center;
 	border-radius: 10px;
 	margin: 4px;
 	line-height: 1em;
+	transition: 500ms;
 }
 
 .InTitle a{
 	text-decoration: none;
-	display: inline-table;
 	color: #f2f2f2;
 	border-radius: 10px;
 	width: 100%;
 	height: 100%;
-	transition: background-color 500ms;
-	/*padding-top: 16px;*/
+	display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
-.InTitle a:hover{
+.InTitle li:hover{
 	color: #E6E6FA;
 	background: #5a5a5a;
 	border-radius: 10px;
 
+}
+
+.InTitleImg{
+	display: inline;
+}
+.InTitleImgMobil{
+	display: none;
+	width: 100%;
 }
 /*/////////////////////////////////*/
 
@@ -160,30 +189,30 @@ header a:hover{
 	width: 100%;
 	display: block;
 	text-align: center;
-	margin-bottom: 100px;
+	margin-bottom: 55px;
 }
+
 .advert li{
-	background-color: #b9ac8d;
-	width: 20%;
-	height: 55px;
 	list-style-type: none;
-	display: inline-grid;
+	display: inline-block;
 	text-align: center;
-	border-radius: 10px;
-	margin: 2px;
-	line-height: 1em;
-	border: #6e6243 solid 1px;
-	vertical-align: center;
+	width: 252px;
+	height: 252px;
+	line-height: 2px;
+	margin-bottom: 5px;
 }
-.advert h3{
-	color: #E6E6FA;
+.advert h2{
+	background-color: #b9ac8d;
+	width: auto;
+	//height: auto;
+	padding: 25px 10px;
+	border-radius: 10px;
+	border: none;
+	margin-bottom: 15px;
 }
 /*////////////////////////////////*/
+
 .serviceTabl{
-	display: block;
-	//width: 60%;
-	//margin-right: auto;
-	//margin-left: auto;
 }
 
 .serviceAndPrise{
@@ -216,13 +245,12 @@ header a:hover{
 
 .cont{
 	min-height: 100vh;
+	max-width: 1200px;
 	background-color: white;
 	color: #262626;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
 	padding: 10px 5px;
 	text-align: justify;
-
 }
 
 
@@ -231,22 +259,32 @@ header a:hover{
 
 .imgDetail{
 	float: right;
-	width: 400px;
 	margin: 20px 10px 10px;
+}
+
+.imgDetail img{
+	width: 400px;
 }
 
 .priceDetail{
 	background-color: #ac8f3c;
-	padding: 10px 30px;
-	//position: absolute;
 	display: inline-block;
-	width: 140px;
+	width: 120px;
 	text-align: center;
 	border-radius: 5px;
 	color: #ffffff;
 	font-size: 14pt;
+	padding: 10px 20px;
 }
 
+.ContentDetail{
+	max-width: 1195px;
+	margin: 0 auto;
+	padding: 10px 5px;
+	background-color: white;
+	color: #262626;
+	text-align: justify;
+}
 /*/////////////Form////////////////*/
 
 
@@ -272,7 +310,7 @@ header a:hover{
 
 .CreateTaskText{
 	border-radius: 8px;
-	width: 100%;
+	width: 97%;
 	padding: 4px;
 	outline: none;
 	transition: box-shadow 0.3s;
@@ -350,21 +388,22 @@ header a:hover{
 }
 #x:hover{
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
 }
 #pop{
 	position: fixed;
 	display: block;
-	bottom: 40px;
-	right: 40px;
+	bottom: 15px;
+	right: 15px;
 	text-align: center;
 	//font-size: 15px;
 	//color: #262626;
 	height: 50px;
 	transition: right 200ms, bottom 200ms;
-
 }
 #pop:hover{
 	bottom: 50px;
+	cursor: pointer;
 }
 #pop img{
 	height: 60px;
@@ -380,13 +419,55 @@ header a:hover{
 /*/////////////////////////////////*/
 
 /*//////////////footer/////////////*/
+
 footer{
-	height: 150px;
-	background-color: #262626;
-	width: 100%;
-	color: #E6E6FA;
-	padding: 10px 0;
+	padding:50px 0;
+  	color:#f0f9ff;
+  	background-color:#282d32;
 }
+.footerContainer{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 1200px;
+	//padding: 0 15px;
+	margin: 0 auto;
+}
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+	//margin: 0 -15px;
+	padding-bottom: 10px;
+	border-bottom: #5a5a5a solid 1px;
+}
+.row2{
+	margin: 30px auto;
+}
+.row2 a{
+	text-decoration: none;
+	color: #9c9c9c;
+}
+.row2 a:hover{
+	color: white;
+}
+.ulCont{
+	width: 370px;
+	padding: 0 15px;
+
+}
+.ulCont a{
+	display: inline-block;
+	text-decoration: none;
+	color: #9c9c9c;
+	margin: 2px 0;
+}
+.ulCont a:hover{
+	color: white;
+}
+/*
 footer a{
 	color: #E6E6FA;
 }
@@ -395,4 +476,105 @@ footer div{
 	//width: 25%;
 	padding-left: 100px;
 	padding-right: 100px;
+}
+*/
+@media (max-width: 1200px) {
+	.center,
+	.centerService,
+	.ContentDetail,
+	.cont,
+	.footerContainer{
+		max-width: 970px;
+	}
+	.row{
+		justify-content: flex-start;
+	}
+}
+
+@media (max-width: 992px) {
+	.center,
+	.ContentDetail,
+	.centerService,
+	.cont,
+	.footerContainer{
+		max-width: 750px;
+	}
+	.foot{
+		display: none;
+		width: auto;
+	}
+	.MobileFoot{
+		display: inline;
+	}
+	header{
+		text-align: left;
+		height: auto;
+	}
+	.InTitle{
+		margin-top: 0;
+	}
+	.row{
+		justify-content: flex-start;
+	}
+}
+
+@media (max-width: 767px) {
+	.center,
+	.ContentDetail,
+	.centerService,
+	.cont{
+		max-width: none;
+	}
+	.footerContainer{
+		width: auto;
+		margin: 5px;
+	}
+	.IndexImg,
+	.InTitleImg,
+	.foot{
+		display: none;
+		width: auto;
+	}
+	.InTitleImgMobil{
+		display: inline;
+	}
+	.InTitle{
+		width: auto;
+		padding: 0 5px;
+	}
+	.MobileFoot{
+		display: inline;
+	}
+	.hh1{
+		margin-top: 0;
+	}
+	header{
+		text-align: left;
+		height: auto;
+	}
+	.imgDetail img{
+		width: 100%;
+		height: auto;
+	}
+	.priceDetail{
+		width: auto;
+		display: block;
+	}
+	footer div{
+		padding: 5px;
+	}
+
+}
+
+@media (max-width: 460px) {
+	.InTitle li{
+		width: 95%;
+	}
+	.ulCont{
+		width: auto;
+		//padding: 5px;
+	}
+	.advert li{
+		width: 120px;
+	}
 }
