@@ -214,8 +214,8 @@ header{
 	margin: 5px;
 }
 .advert h2{
-	background-color: #b9ac8d;
-	display: flex;
+background: rgb(110,98,67);
+background: linear-gradient(0deg, rgba(110,98,67,1) 0%, rgba(189,168,116,1) 67%);	display: flex;
 	align-content: center;
     justify-content: center;
     align-items: center;
@@ -362,7 +362,9 @@ header{
 
 /*////////////popup////////////////*/
 .popup{
-	display: block;
+	display: flex;
+	justify-content: center;
+    align-items: center;
 	position: fixed;
 	width: 160px;
 	height: 150px;
@@ -374,10 +376,9 @@ header{
 	border-radius:30px;
 	padding: 10px;
 	color: #93432e;
-	transition: width 200ms, height 200ms, bottom 200ms, right 200ms;
+	transition: 200ms;
 
 }
-
 .popup:hover{
 	box-shadow: 1px 1px 10px rgba(248, 197, 36, 0.78);
 	width: 170px;
@@ -385,7 +386,6 @@ header{
 	bottom: 15px;
 	right: 15px;
 }
-
 .popupH{
 	margin: 10px;
 	text-align: center;
@@ -397,7 +397,6 @@ header{
 	display: inline-block;
 
 }
-
 #x{
 	position: absolute;
 	top: 10px;
@@ -410,26 +409,20 @@ header{
 #pop{
 	position: fixed;
 	display: block;
-	bottom: 15px;
-	right: 15px;
+	bottom: 3%;
+	right: 1%;
 	text-align: center;
 	//font-size: 15px;
 	//color: #262626;
 	height: 50px;
-	transition: right 200ms, bottom 200ms;
+	transition: 200ms;
 }
 #pop:hover{
-	bottom: 50px;
+	bottom: 4%;
 	cursor: pointer;
 }
 #pop img{
 	height: 60px;
-	transition: width 200ms, height 200ms;
-}
-
-#pop img:hover{
-	height: 60px;
-	width: auto;
 }
 
 
@@ -466,6 +459,7 @@ footer{
 .row2 a{
 	text-decoration: none;
 	color: #9c9c9c;
+	transition: 200ms;
 }
 .row2 a:hover{
 	color: white;
@@ -480,6 +474,7 @@ footer{
 	text-decoration: none;
 	color: #9c9c9c;
 	margin: 2px 0;
+	transition: 200ms;
 }
 .ulCont a:hover{
 	color: white;
