@@ -214,8 +214,8 @@ header{
 	margin: 5px;
 }
 .advert h2{
-background: rgb(110,98,67);
-background: linear-gradient(0deg, rgba(110,98,67,1) 0%, rgba(189,168,116,1) 67%);	display: flex;
+	background: rgb(110,98,67);
+	background: linear-gradient(0deg, rgba(110,98,67,1) 0%, rgba(189,168,116,1) 67%);	display: flex;
 	align-content: center;
     justify-content: center;
     align-items: center;
