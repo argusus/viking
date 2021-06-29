@@ -15,12 +15,14 @@
     <script type="text/javascript">
 
     $(function () {
-        $('.popup').hide(0, function (){
+        $('.popup, .popup img, .popup div').hide(0, function (){
             $('#pop').html('<img src="{% static 'main/img/free-icon-phone-call-1112490.svg' %}">').click(function () {
-                $('.popup').show(300, function () {
+                $('.popup').show(400, function () {
+                    $('.popup img, .popup div').show(400);
                     $('#pop').html('');
                     $('#x').click(function (){
-                        $('.popup').hide(300, function (){
+                        $('.popup').hide(400, function (){
+                            $('.popup img, .popup div').hide(400);
                             $('#pop').html('<img src="{% static 'main/img/free-icon-phone-call-1112490.svg' %}">');
                         });
                     });
@@ -39,7 +41,6 @@
                 });
             });
         });
-
     })
 
     </script>
