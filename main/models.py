@@ -4,7 +4,7 @@ from django.utils import timezone
 
 
 class ServicesAndPrice(models.Model):
-    service = models.TextField(_('Послуга'), max_length=100)
+    service = models.CharField(_('Послуга'), max_length=100)
     description = models.TextField(_('Опис'), null=True, blank=True)
     price = models.DecimalField(_('Ціна'), max_digits=6, decimal_places=0)
     si = models.CharField(_('Одиниці виміру'), max_length=20, null=True, blank=True, default='грн')
