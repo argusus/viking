@@ -1,6 +1,7 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block title %}
     {% translate 'Будівельна компанія' %}
@@ -43,13 +44,17 @@
                 <img class="InTitleImgMobil" src="{% static 'main/img/pngegg-mobile.png' %}" alt="handyman">
                 <h3 align="center">{% translate 'Оберіть послугу' %}:</h3>
 
-
                 <ul class="rab">
+                {% if LANGUAGE_CODE == 'ru' %}
                     {% for i in service %}
                         <li><a href="{% url 'service_detail' i.id %}"><div style="text-align: center; padding: 10px 5px;">{{ i.service }}</div></a></li>
                     {% endfor %}
+                {% elif LANGUAGE_CODE == 'uk' %}
+                    {% for i in service %}
+                        <li><a href="{% url 'service_detail' i.id %}"><div style="text-align: center; padding: 10px 5px;">{{ i.serviceUA }}</div></a></li>
+                    {% endfor %}
+                {% endif %}
                 </ul>
-
 
                 <h1 style="color: #bda874; margin-bottom: 0">{% blocktranslate with min_price=min_price.price max_price=max_price.price %}Ціна від {{ min_price }} до {{ max_price }} грн{% endblocktranslate %}</h1>
             {% else %}

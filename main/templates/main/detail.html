@@ -1,28 +1,55 @@
 {% extends 'main/base.html' %}
 {% load i18n %}
 {% load static %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block title %}
-    {{ detail.service }}
+    {% if LANGUAGE_CODE == 'ru' %}
+        {{ detail.service }}
+    {% elif LANGUAGE_CODE == 'uk' %}
+        {{ detail.serviceUA }}
+    {% endif %}
 {% endblock %}
 
 
 {% block content %}
-    <h1>{{ detail.service }}</h1>
+    {% if LANGUAGE_CODE == 'ru' %}
+        <h1>{{ detail.service }}</h1>
+    {% elif LANGUAGE_CODE == 'uk' %}
+        <h1>{{ detail.serviceUA }}</h1>
+    {% endif %}
 {% endblock %}
 {% block contentFullWidth %}
 <div class="ContentDetail">
-    <div style="display: inline-block">
-        {% if detail.description %}
-            {% if detail.image %}<div class="imgDetail"><img src="{{ detail.image.url }}" alt="image"></div>{% endif %}
+    {% if LANGUAGE_CODE == 'ru' %}
+        <div style="display: inline-block">
 
-            <p>{{ detail.description }}</p>
+            {% if detail.description %}
+                {% if detail.image %}<div class="imgDetail"><img src="{{ detail.image.url }}" alt="image"></div>{% endif %}
 
-        {% else %}<h2>Ціна даної послуги:</h2>
-        {% endif %}
-    </div>
+                <p>{{ detail.description }}</p>
 
-    <a style="text-decoration: none" href="{% url 'order' %}"><div class="priceDetail button" style="color: #262626">{% translate 'Замовити' %}</div></a>
-    <div class="priceDetail">{{ detail.price }} {{ detail.si }}</div>
+            {% else %}<h2>Ціна даної послуги:</h2>
+            {% endif %}
+        </div>
+
+        <a style="text-decoration: none" href="{% url 'order' %}"><div class="priceDetail button" style="color: #262626">{% translate 'Замовити' %}</div></a>
+        <div class="priceDetail">{{ detail.price }} {{ detail.si }}</div>
+    {% elif LANGUAGE_CODE == 'uk' %}
+        <div style="display: inline-block">
+
+            {% if detail.descriptionUA %}
+                {% if detail.image %}<div class="imgDetail"><img src="{{ detail.image.url }}" alt="image"></div>{% endif %}
+
+                <p>{{ detail.descriptionUA }}</p>
+
+            {% else %}<h2>Ціна даної послуги:</h2>
+            {% endif %}
+        </div>
+
+        <a style="text-decoration: none" href="{% url 'order' %}"><div class="priceDetail button" style="color: #262626">{% translate 'Замовити' %}</div></a>
+        <div class="priceDetail">{{ detail.price }} {{ detail.siUA }}</div>
+
+    {% endif %}
 </div>
 {% endblock %}
