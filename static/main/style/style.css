@@ -92,6 +92,7 @@ header{
 	border: solid rgba(245, 238, 220, 0.25) 1px;
 	border-radius: 10px;
 	background-color: #333333;
+	width: -moz-available;
 	width: -webkit-fill-available;
 	padding: 10px 20px;
 	margin: 5px 10px;
@@ -147,7 +148,7 @@ header{
 
 .InTitle li{
 	background-color: #333333;
-	width: 30%;
+	width: max-content;
 	list-style-type: none;
 	text-align: center;
 	border-radius: 10px;
@@ -363,11 +364,12 @@ header{
 /*////////////popup////////////////*/
 .popup{
 	display: flex;
+	align-content: center;
 	justify-content: center;
     align-items: center;
 	position: fixed;
 	width: 160px;
-	height: 150px;
+	height: 160px;
 	bottom: 20px;
 	right: 20px;
 	text-align: center;
@@ -382,7 +384,7 @@ header{
 .popup:hover{
 	box-shadow: 1px 1px 10px rgba(248, 197, 36, 0.78);
 	width: 170px;
-	height: 160px;
+	height: 170px;
 	bottom: 15px;
 	right: 15px;
 }
