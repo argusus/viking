@@ -13,6 +13,10 @@ class ServicesAndPrice(models.Model):
     siUA = models.CharField('Одиниці виміру UA', max_length=20, null=True, blank=True, default='грн')
     image = models.ImageField(_('Зображення'), null=True, blank=True, upload_to='var/www/file_project/media/images/')
 
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse('detail', args=[str(self.id)])
+
     def __str__(self):
         return self.service
 
