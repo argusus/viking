@@ -3,6 +3,11 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 
 
+class ServiceManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().all()
+
+
 class ServicesAndPrice(models.Model):
     service = models.CharField('Услуга RU', max_length=200)
     serviceUA = models.CharField('Послуга UA', max_length=200, null=True, blank=True)
@@ -13,12 +18,19 @@ class ServicesAndPrice(models.Model):
     siUA = models.CharField('Одиниці виміру UA', max_length=20, null=True, blank=True, default='грн')
     image = models.ImageField(_('Зображення'), null=True, blank=True, upload_to='var/www/file_project/media/images/')
 
-    def __str__(self):
-        return self.service
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse('service_detail', args=[str(self.id)])
 
     class Meta:
         verbose_name = _('Послуга')
         verbose_name_plural = _('Послуги')
+
+    def __str__(self):
+        return self.service
+
+    objects = models.Manager()          # Менеджер за замовчуванням
+    published = ServiceManager()        # Наш новий менеджер
 
 
 class Questions(models.Model):
