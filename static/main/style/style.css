@@ -143,12 +143,12 @@ header{
 	padding: 0;
 	width: 80%;
 	flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .InTitle li{
 	background-color: #333333;
-	width: max-content;
+	width: 43%;
 	list-style-type: none;
 	text-align: center;
 	border-radius: 10px;

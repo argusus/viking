@@ -32,7 +32,7 @@ ALLOWED_HOSTS = [
     '192.168.42.106',
     '192.168.50.143',
     '192.168.187.125',
-    'argus.pythonanywhere.com'
+    'argus.pythonanywhere.com',
 ]
 
 

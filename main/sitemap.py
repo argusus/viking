@@ -4,20 +4,20 @@ from django.urls import reverse
 
 
 class ServiceAndPriceSitemap(Sitemap):
-    changefreq = 'daily'
-    priority = 0.9
+    changefreq = 'always'
+    priority = 0.8
     i18n = True
 
     def items(self):
-        return ServicesAndPrice.objects.all()
+        return ServicesAndPrice.published.all()
 
-    def lastmod(self, obj):
-        return obj.service
+    # def lastmod(self, obj):
+    #     return obj.id
 
 
 # class StaticViewsSitemap(Sitemap):
-#     changefreq = 'daily'
-#     priority = 1.0
+#     # changefreq = 'daily'
+#     priority = 0.9
 #     i18n = True
 #
 #     def items(self):

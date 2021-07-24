@@ -3,6 +3,11 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 
 
+class ServiceManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().all()
+
+
 class ServicesAndPrice(models.Model):
     service = models.CharField('Услуга RU', max_length=200)
     serviceUA = models.CharField('Послуга UA', max_length=200, null=True, blank=True)
@@ -15,14 +20,17 @@ class ServicesAndPrice(models.Model):
 
     def get_absolute_url(self):
         from django.urls import reverse
-        return reverse('detail', args=[str(self.id)])
-
-    def __str__(self):
-        return self.service
+        return reverse('service_detail', args=[str(self.id)])
 
     class Meta:
         verbose_name = _('Послуга')
         verbose_name_plural = _('Послуги')
+
+    def __str__(self):
+        return self.service
+
+    objects = models.Manager()          # Менеджер за замовчуванням
+    published = ServiceManager()        # Наш новий менеджер
 
 
 class Questions(models.Model):
