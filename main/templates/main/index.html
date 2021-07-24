@@ -7,80 +7,63 @@
     {% translate 'Будівельна компанія' %}
 {% endblock %}
 {% block head %}
-<script type="text/javascript">
 
-/*
-    let c = 0;
-    $(setInterval(function(){
-        if(c===0 && $(window).scrollTop() >= $('.advert').offset().top - ($(window).height() + 50)){
-            c=1;
-            $(".add").animate({
-                width: "260px",
-            }, 300);
-        } else if($(window).scrollTop() <= $('.advert').offset().top - $(window).height()) {
-            c=0;
-            $(".add").css({
-                width: "252px",
-            });
-        }
-    }, 310))
-*/
-</script>
 {% endblock %}
 
 
 
 {% block content %}
-<div>
-    <h1 class="hh1" align="center">{% translate 'Будівельна компанія Вікінг' %}</h1>
+
     <div>
-<!-- ----------------------------- -->
-        <div class="InTitle">
-            <h2 align="center">{% translate 'Комплексний ремонт' %}</h2>
-            <h3 align="center">{% translate 'Кваліфіковані робітники для будь-якої роботи' %}</h3>
+        <h1 class="hh1" align="center">{% translate 'Будівельна компанія Вікінг' %}</h1>
+        <div>
+    <!-- ----------------------------- -->
+            <div class="InTitle">
+                <h2 align="center">{% translate 'Комплексний ремонт' %}</h2>
+                <h3 align="center">{% translate 'Кваліфіковані робітники для будь-якої роботи' %}</h3>
 
 
-            {% if service %}
-                <img class="InTitleImgMobil" src="{% static 'main/img/pngegg-mobile.png' %}" alt="handyman">
-                <h3 align="center">{% translate 'Оберіть послугу' %}:</h3>
+                {% if service %}
+                    <img class="InTitleImgMobil" src="{% static 'main/img/pngegg-mobile.png' %}" alt="handyman">
+                    <h3 align="center">{% translate 'Оберіть послугу' %}:</h3>
 
-                <ul class="rab">
-                {% if LANGUAGE_CODE == 'ru' %}
-                    {% for i in service %}
-                        <li><a href="{% url 'service_detail' i.id %}"><div style="text-align: center; padding: 10px 5px;">{{ i.service }}</div></a></li>
-                    {% endfor %}
-                {% elif LANGUAGE_CODE == 'uk' %}
-                    {% for i in service %}
-                        <li><a href="{% url 'service_detail' i.id %}"><div style="text-align: center; padding: 10px 5px;">{{ i.serviceUA }}</div></a></li>
-                    {% endfor %}
+                    <ul class="rab">
+                    {% if LANGUAGE_CODE == 'ru' %}
+                        {% for i in service %}
+                            <li><a href="{% url 'service_detail' i.id %}"><div style="text-align: center; padding: 15px 5px;">{{ i.service }}</div></a></li>
+                        {% endfor %}
+                    {% elif LANGUAGE_CODE == 'uk' %}
+                        {% for i in service %}
+                            <li><a href="{% url 'service_detail' i.id %}"><div style="text-align: center; padding: 15px 5px;">{{ i.serviceUA }}</div></a></li>
+                        {% endfor %}
+                    {% endif %}
+                    </ul>
+
+                    <h1 style="color: #bda874; margin-bottom: 0">{% blocktranslate with min_price=min_price.price max_price=max_price.price %}Ціна від {{ min_price }} до {{ max_price }} грн{% endblocktranslate %}</h1>
+                {% else %}
+                    <h3>{% translate 'Адміністратор ще не додав послуг' %}</h3>
                 {% endif %}
+            </div>
+
+
+
+             <div class="InTitleImg"><img src="{% static 'main/img/pngegg.png' %}" alt="handyman" width="45%"></div>
+
+        </div>
+
+    <!-- ----------------------------- -->
+        <div>
+            <div class="advert">
+                <ul>
+                    <li class="add"><h2>93%</h2><div>{% translate 'Конверсія виходу в зміну' %}</div></li>
+                    <li class="add"><h2>10хв</h2><div>{% translate 'Середній час формування зміни' %}</div></li>
+                    <li class="add"><h2>10000+</h2><div>{% translate 'Робітників в нашій базі' %}</div></li>
+                    <li class="add"><h2>35%</h2><div>{% translate 'Ваша економія' %}</div></li>
                 </ul>
-
-                <h1 style="color: #bda874; margin-bottom: 0">{% blocktranslate with min_price=min_price.price max_price=max_price.price %}Ціна від {{ min_price }} до {{ max_price }} грн{% endblocktranslate %}</h1>
-            {% else %}
-                <h3>{% translate 'Адміністратор ще не додав послуг' %}</h3>
-            {% endif %}
+            </div>
         </div>
 
-
-
-        <div class="InTitleImg"><img src="{% static 'main/img/pngegg.png' %}" alt="handyman" width="45%"></div>
-
     </div>
-
-<!-- ----------------------------- -->
-    <div>
-        <div class="advert">
-            <ul>
-                <li class="add"><h2>93%</h2><div>{% translate 'Конверсія виходу в зміну' %}</div></li>
-                <li class="add"><h2>10хв</h2><div>{% translate 'Середній час формування зміни' %}</div></li>
-                <li class="add"><h2>10000+</h2><div>{% translate 'Робітників в нашій базі' %}</div></li>
-                <li class="add"><h2>35%</h2><div>{% translate 'Ваша економія' %}</div></li>
-            </ul>
-        </div>
-    </div>
-
-</div>
 {% endblock %}
 
 
