@@ -19,12 +19,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib.sitemaps.views import sitemap
-from main.sitemap import ServiceAndPriceSitemap
+from main.sitemap import ServiceAndPriceSitemap, HomeSitemap, AboutSitemap, EntrySitemap
 # from upload_app.views import home_page
 
 sitemaps = {
     'services': ServiceAndPriceSitemap,
-    # 'static': StaticViewsSitemap,
+    'home': HomeSitemap,
+    'about': AboutSitemap,
+    'entry': EntrySitemap,
 }
 
 urlpatterns = [
