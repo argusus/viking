@@ -317,7 +317,7 @@ header{
 
 .CreateTask:focus{
 	box-shadow: 0 0 7px 1px rgb(252, 180, 71);
-	border: 1px solid;
+	border: 1px solid rgb(252, 180, 71);
 }
 
 
@@ -336,7 +336,7 @@ header{
 
 .CreateTaskText:focus{
 	box-shadow: 0 0 7px 1px rgb(252, 180, 71);
-	border: 1px solid;
+	border: 1px solid rgb(252, 180, 71);
 }
 
 .select{
@@ -352,11 +352,19 @@ header{
 	background-color: #eed17e;
 	border: none;
 	transition: background-color 0.3s, box-shadow 0.3s;
+	cursor: pointer;
 }
 
 .button:hover{
 	background-color: #efb439;
 	box-shadow: 0 0 7px 1px rgb(252, 180, 71);
+}
+.socN{
+	width: 40px;
+	transition: 100ms;
+}
+.socN:hover{
+	width: 50px;
 }
 /*////////////////////////////////*/
 
@@ -581,6 +589,7 @@ footer div{
 		font-size: 12pt;
 		width: 60px;
 		height: 60px;
+		border-radius: 15px;
 	}
 	.advert div{
 		font-size: 12px;
@@ -602,6 +611,7 @@ footer div{
 		font-size: 10pt;
 		width: 45px;
 		height: 45px;
+		border-radius: 10px;
 	}
 	.advert div{
 		font-size: 12px;
